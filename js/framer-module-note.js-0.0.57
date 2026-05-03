@@ -1,0 +1,8 @@
+/*
+ * Note (phosphor-icons/Note@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/note.js"
+export { default } from "../js/note.js"

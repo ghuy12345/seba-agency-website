@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime.rcxdvavm.mjs";function t(e,t){return{description:`We scale Ecom Brands with ad management (TikTok, Meta, Google), creative strategy, and consulting. `,favicon:`../images/20417bjf96fcvxwduqb1aut6d0.jpg`,robots:`max-image-preview:large`,title:`Seba Agency`}}var n=e((()=>{}));export{t as n,n as t};
+//# sourceMappingURL=shared-lib.BkV63AGg.mjs.map
