@@ -148,5 +148,27 @@ img.framer-text.framer-image.framer-styles-preset-122g7pf {
 <!-- SnippetEnd: TQv1CKZvD -->
 
     <!-- End of bodyEnd -->
+
+<!-- Calendly CTA fix: ensures buttons open Calendly regardless of Framer routing -->
+<script>
+(function() {
+  function attachCalendly() {
+    document.querySelectorAll('[data-framer-name="Primary"]').forEach(function(el) {
+      el.setAttribute('href', 'https://calendly.com/joshua-sebaagency/30min');
+      el.setAttribute('target', '_blank');
+      el.setAttribute('rel', 'noopener noreferrer');
+      el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open('https://calendly.com/joshua-sebaagency/30min', '_blank', 'noopener,noreferrer');
+      }, true);
+    });
+  }
+  // Run immediately and again after Framer hydrates
+  document.addEventListener('DOMContentLoaded', attachCalendly);
+  setTimeout(attachCalendly, 500);
+  setTimeout(attachCalendly, 1500);
+})();
+</script>
 </body>
 </html>
