@@ -1,0 +1,73 @@
+/* Inter — latin subset */
+@font-face {
+  font-family: 'Inter';
+  src: url('/images/grgckwrn6d3uz8ewclhzxwefc4.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/images/d3thnaqiaeqie5hgcrw4mmgwyu.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/images/syrnpwzamircj3wilpip43kjqs.woff2') format('woff2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+
+:root {
+  --nav-bg: rgba(17, 17, 17, 0.92);
+  --nav-border: rgba(38, 38, 38, 0.5);
+}
+
+html { scroll-behavior: smooth; }
+
+#nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+}
+
+/* FAQ accordion */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+.faq-item.open .faq-answer {
+  max-height: 400px;
+  padding-bottom: 1.25rem;
+}
+.faq-arrow {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-arrow {
+  transform: rotate(180deg);
+}
+
+/* Mobile menu */
+#mobile-menu { display: none; }
+#mobile-menu.open { display: flex; }
+
+/* Testimonial carousel */
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* Stat dividers */
+.stat-divider::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+}
