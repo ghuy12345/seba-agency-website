@@ -1,1 +1,22 @@
+# Secrets
 .env
+.env.*
+
+# macOS / Windows
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*~
+*.bak
+*.orig
+*.swp
+
+# Tooling — the repo root is served publicly by GitHub Pages,
+# so anything tracked here is downloadable over the live domain.
+.claude/
+node_modules/
