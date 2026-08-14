@@ -1,4 +1,15 @@
 (function () {
+  // Availability badge — single source of truth for every page.
+  // Edit this one string; all pills update. Set to '' to hide them everywhere.
+  var SCARCITY_TEXT = 'Currently accepting new partners';
+
+  document.querySelectorAll('[data-scarcity]').forEach(function (pill) {
+    var slot = pill.querySelector('[data-scarcity-text]');
+    if (!SCARCITY_TEXT || !slot) return;
+    slot.textContent = SCARCITY_TEXT;
+    pill.style.display = '';
+  });
+
   // AOS
   if (typeof AOS !== 'undefined') {
     AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 60 });
