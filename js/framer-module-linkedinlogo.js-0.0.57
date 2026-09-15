@@ -1,8 +1,0 @@
-/*
- * LinkedinLogo (phosphor-icons/LinkedinLogo@0.0.57)
- *
- * Learn More: https://www.framer.com/asset-urls
- */
-
-export * from "../js/linkedinlogo.js"
-export { default } from "../js/linkedinlogo.js"
