@@ -3,6 +3,8 @@
   <url><loc>https://sebaagency.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://sebaagency.com/case-studies.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://sebaagency.com/case-studies/men-mansion.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sebaagency.com/case-studies/sendmonee.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sebaagency.com/case-studies/drops.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://sebaagency.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://sebaagency.com/legal/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://sebaagency.com/legal/impressum.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
