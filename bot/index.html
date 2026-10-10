@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seba AI — Free Ecommerce Chatbot | Seba Agency</title>
+  <meta name="description" content="Ask any ecommerce question: angles, ad creative, landing pages, Meta and Google ads, email, sourcing, unit economics. Free for brand owners and media buyers.">
+  <link rel="canonical" href="https://sebaagency.com/bot/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sebaagency.com/bot/">
+  <meta property="og:site_name" content="Seba Agency">
+  <meta property="og:title" content="Seba AI — Free Ecommerce Chatbot">
+  <meta property="og:description" content="Ask any ecommerce question and get answers from a playbook built on years of running DTC ads. Free, 15 questions a day.">
+  <meta property="og:image" content="https://sebaagency.com/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Seba AI — Free Ecommerce Chatbot">
+  <meta name="twitter:description" content="Ask any ecommerce question and get answers from a playbook built on years of running DTC ads. Free, 15 questions a day.">
+  <meta name="twitter:image" content="https://sebaagency.com/images/og-image.png">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+
+  <!-- PostHog -->
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init('phc_kMrTAFRdN4yGF4y9gftGfP48Y4ALhppD3tS6Xz2KP8qi',{api_host:'https://eu.i.posthog.com',defaults:'2026-01-30'});</script>
+  <script defer src="/js/analytics.js"></script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"Fragment Mono"', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="/css/custom.css">
+  <!-- Fragment Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .step { display: none; }
+    .step.active { display: block; }
+    .opt { display: block; width: 100%; text-align: left; border: 1px solid #262626; border-radius: 1rem; padding: 1rem 1.25rem; font-weight: 500; transition: border-color .2s, background-color .2s; }
+    .opt:hover { border-color: #737373; }
+    .opt.selected { border-color: #fff; background: rgba(255,255,255,.06); }
+    .field { width: 100%; background: #0a0a0a; border: 1px solid #262626; border-radius: .75rem; padding: .875rem 1rem; font-size: 16px; color: #fff; }
+    .field::placeholder { color: #525252; }
+    .field:focus { outline: none; border-color: #fff; }
+  </style>
+</head>
+<body class="bg-black text-white antialiased min-h-screen flex flex-col">
+
+  <!-- NAV -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Seba Agency home" class="flex items-center gap-3">
+        <span class="logo-mark h-8 w-8" aria-hidden="true"></span>
+        <span class="text-sm font-semibold">Seba AI</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <a href="/bot/chat" class="hidden sm:inline text-sm text-neutral-300 hover:text-white transition-colors">Log in</a>
+        <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true"
+           class="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-neutral-100 transition-colors">
+          Book a call
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 pt-16">
+
+    <div id="link-error" class="hidden px-6 pt-6">
+      <div class="max-w-3xl mx-auto border border-red-500/40 bg-red-500/10 text-red-200 text-sm rounded-xl px-4 py-3">
+        That link is invalid or already used. Enter your email on the <a href="/bot/chat" class="underline">chat page</a> to get a fresh one.
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="px-6 pt-12 pb-16 md:pt-24 md:pb-24">
+      <div class="max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 border border-white/20 rounded-full px-4 py-1.5 text-xs text-neutral-300 mb-6 font-mono">
+          <span class="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+          Free for brand owners and media buyers
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6">Welcome to the Seba&nbsp;AI chat.</h1>
+        <p class="text-neutral-300 text-lg leading-relaxed mb-8">
+          Ask any ecommerce question you have: angles, ad creative, landing pages, Meta and Google ads, email, sourcing, unit economics. It answers from a structured playbook built from years of running DTC ads, in seconds.
+        </p>
+        <a href="#signup" data-start class="inline-block w-full sm:w-auto text-center bg-white text-black font-semibold px-8 py-4 rounded-full text-base hover:bg-neutral-100 transition-colors">
+          Start chatting for free
+        </a>
+        <p class="text-neutral-500 text-sm mt-4">Already signed up? <a href="/bot/chat" class="text-white underline underline-offset-4">Open the chat</a></p>
+
+        <div class="mt-10 border border-neutral-800 rounded-2xl p-5 flex flex-col sm:flex-row sm:items-center gap-4 justify-between">
+          <p class="text-neutral-300 text-sm leading-relaxed">Want to go deeper on your brand or your clients? Book a call with us any time.</p>
+          <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true"
+             class="shrink-0 inline-block text-center border border-neutral-700 text-white font-semibold px-6 py-3 rounded-full hover:border-neutral-400 transition-colors text-sm">
+            Book a call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="px-6 py-16 border-t border-neutral-900">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-4 md:gap-6">
+        <div class="border border-neutral-800 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-2">Practical, step by step</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Frameworks, decision rules and examples you can apply today.</p>
+        </div>
+        <div class="border border-neutral-800 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-2">Built for people who spend money on ads</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">From your first angle to scaling spend and fixing a page that will not convert.</p>
+        </div>
+        <div class="border border-neutral-800 rounded-2xl p-6">
+          <h3 class="text-lg font-semibold mb-2">Free. 15 questions a day.</h3>
+          <p class="text-neutral-400 text-sm leading-relaxed">Confirm your email once. Come back any time with just your email.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMPLES -->
+    <section class="px-6 py-16 border-t border-neutral-900">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-6">Questions people ask</p>
+        <div class="flex flex-wrap gap-2" id="examples">
+          <button type="button" class="text-left text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-500 hover:text-white transition-colors">How do I find a winning angle for my product?</button>
+          <button type="button" class="text-left text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-500 hover:text-white transition-colors">Why do my ads get clicks but no sales?</button>
+          <button type="button" class="text-left text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-500 hover:text-white transition-colors">How should I structure a Meta testing campaign?</button>
+          <button type="button" class="text-left text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-500 hover:text-white transition-colors">What makes a strong hook for a video ad?</button>
+          <button type="button" class="text-left text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-500 hover:text-white transition-colors">How do I set a target ROAS?</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNUP -->
+    <section id="signup" class="px-6 py-16 md:py-24 border-t border-neutral-900 scroll-mt-16">
+      <div class="max-w-xl mx-auto">
+        <p class="text-xs font-mono text-neutral-500 uppercase tracking-widest mb-4">Get free access</p>
+
+        <div id="wizard">
+          <div class="flex items-center justify-between text-xs font-mono text-neutral-500 mb-2">
+            <span id="step-count">Step 1</span>
+          </div>
+          <div class="h-1 bg-neutral-900 rounded-full overflow-hidden mb-10">
+            <div id="progress" class="h-full bg-white rounded-full transition-all duration-300" style="width:0%"></div>
+          </div>
+
+          <form id="signup-form" novalidate>
+            <!-- 1 -->
+            <div class="step" data-step="name">
+              <label for="f-name" class="block text-2xl md:text-3xl font-bold mb-6">What is your first name?</label>
+              <input id="f-name" class="field" type="text" maxlength="80" autocomplete="given-name" placeholder="First name">
+            </div>
+            <!-- 2 -->
+            <div class="step" data-step="business">
+              <label for="f-business" class="block text-2xl md:text-3xl font-bold mb-6">What is your business called?</label>
+              <input id="f-business" class="field" type="text" maxlength="120" autocomplete="organization" placeholder="Business name">
+            </div>
+            <!-- 3 -->
+            <div class="step" data-step="type">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">Which describes you best?</h2>
+              <div class="grid gap-3">
+                <button type="button" class="opt py-6 text-lg" data-key="type" data-value="brand">I run a brand</button>
+                <button type="button" class="opt py-6 text-lg" data-key="type" data-value="agency">I run an agency or provide a service</button>
+              </div>
+            </div>
+            <!-- 4a -->
+            <div class="step" data-step="revenue">
+              <h2 class="text-2xl md:text-3xl font-bold mb-2">Roughly, what is your monthly revenue?</h2>
+              <p class="text-neutral-400 text-sm mb-6">We use this to tailor the answers to your stage.</p>
+              <div class="grid grid-cols-2 gap-3">
+                <button type="button" class="opt" data-key="revenue" data-value="0-10k">Under 10k</button>
+                <button type="button" class="opt" data-key="revenue" data-value="10k-20k">10k–20k</button>
+                <button type="button" class="opt" data-key="revenue" data-value="20k-100k">20k–100k</button>
+                <button type="button" class="opt" data-key="revenue" data-value="100k-500k">100k–500k</button>
+                <button type="button" class="opt col-span-2" data-key="revenue" data-value="500k+">500k+</button>
+              </div>
+            </div>
+            <!-- 5a -->
+            <div class="step" data-step="bottleneck">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">What is your biggest bottleneck right now?</h2>
+              <div class="grid gap-3">
+                <button type="button" class="opt" data-key="bottleneck" data-value="ads">Ads / media buying</button>
+                <button type="button" class="opt" data-key="bottleneck" data-value="creative">Creative strategy</button>
+                <button type="button" class="opt" data-key="bottleneck" data-value="cro">Landing page / conversion</button>
+                <button type="button" class="opt" data-key="bottleneck" data-value="email">Email &amp; retention</button>
+                <button type="button" class="opt" data-key="bottleneck" data-value="offer">Offer / positioning</button>
+                <button type="button" class="opt" data-key="bottleneck" data-other>Other</button>
+                <input id="f-bottleneck-other" class="field hidden" type="text" maxlength="200" placeholder="Tell us in a few words" aria-label="Other bottleneck">
+              </div>
+            </div>
+            <!-- 4b -->
+            <div class="step" data-step="service">
+              <h2 class="text-2xl md:text-3xl font-bold mb-6">What service do you provide?</h2>
+              <div class="grid gap-3">
+                <button type="button" class="opt" data-key="service" data-value="ads">Paid ads</button>
+                <button type="button" class="opt" data-key="service" data-value="creative">Creative / UGC</button>
+                <button type="button" class="opt" data-key="service" data-value="email">Email &amp; retention</button>
+                <button type="button" class="opt" data-key="service" data-other>Other</button>
+                <input id="f-service-other" class="field hidden" type="text" maxlength="200" placeholder="Tell us in a few words" aria-label="Other service">
+              </div>
+            </div>
+            <!-- 6 -->
+            <div class="step" data-step="interest">
+              <label for="f-interest" class="block text-2xl md:text-3xl font-bold mb-2">What would you like Seba AI to help you with most?</label>
+              <p class="text-neutral-400 text-sm mb-6">One sentence is enough. It helps the assistant pick the right examples for you.</p>
+              <textarea id="f-interest" class="field resize-none" rows="3" maxlength="300" placeholder="Optional"></textarea>
+            </div>
+            <!-- 7 -->
+            <div class="step" data-step="email">
+              <label for="f-email" class="block text-2xl md:text-3xl font-bold mb-6">Where should we send your access link?</label>
+              <input id="f-email" class="field" type="email" autocomplete="email" placeholder="you@brand.com">
+              <label class="flex items-start gap-3 mt-5 text-sm text-neutral-400 leading-relaxed cursor-pointer">
+                <input id="f-consent" type="checkbox" class="mt-1 h-4 w-4 shrink-0 accent-white">
+                <span>I agree to receive the access link and occasional emails from Seba Agency about ecommerce growth. I can unsubscribe at any time. See the <a href="/legal/privacy-policy.html" target="_blank" class="text-white underline underline-offset-2">privacy policy</a>.</span>
+              </label>
+              <div class="hp" aria-hidden="true">
+                <label for="f-website">Website</label>
+                <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+            </div>
+
+            <p id="form-error" class="text-red-400 text-sm mt-4 min-h-[1.25rem]" role="alert"></p>
+
+            <div class="flex items-center gap-3 mt-6">
+              <button type="button" id="back-btn" class="border border-neutral-700 text-white font-semibold px-6 py-3 rounded-full hover:border-neutral-400 transition-colors text-sm">Back</button>
+              <button type="submit" id="next-btn" class="flex-1 sm:flex-none bg-white text-black font-semibold px-8 py-3 rounded-full hover:bg-neutral-100 transition-colors text-sm disabled:opacity-50">Next</button>
+              <span class="hidden sm:inline text-xs text-neutral-600 font-mono ml-2">or press Enter ↵</span>
+            </div>
+          </form>
+        </div>
+
+        <div id="success" class="hidden text-center py-10">
+          <span class="logo-mark h-12 w-12 mx-auto mb-6" aria-hidden="true"></span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Check your inbox.</h2>
+          <p class="text-neutral-400 leading-relaxed">Click the link we just sent to open Seba AI. If it does not arrive within a minute, check spam.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-neutral-900 py-10 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+      <a href="/" aria-label="Seba Agency home" class="flex items-center gap-3">
+        <span class="logo-mark h-7 w-7" aria-hidden="true"></span>
+        <span class="text-neutral-500 text-sm">© 2026 Seba Agency</span>
+      </a>
+      <ul class="flex gap-6 text-sm text-neutral-400">
+        <li><a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy</a></li>
+        <li><a href="/legal/impressum.html" class="hover:text-white transition-colors">Imprint</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var SIGNUP_URL = 'https://n8n.apps.sebaagency.com/webhook/brain-signup';
+
+    if (new URLSearchParams(location.search).get('error') === 'link') {
+      document.getElementById('link-error').classList.remove('hidden');
+    }
+
+    var form = document.getElementById('signup-form');
+    var steps = {};
+    form.querySelectorAll('.step').forEach(function (el) { steps[el.dataset.step] = el; });
+    var backBtn = document.getElementById('back-btn');
+    var nextBtn = document.getElementById('next-btn');
+    var errEl = document.getElementById('form-error');
+    var progress = document.getElementById('progress');
+    var stepCount = document.getElementById('step-count');
+
+    var answers = { name: '', business: '', type: '', revenue: '', bottleneck: '', service: '', interest: '', email: '' };
+    var trail = [];
+    var current = 'name';
+
+    function flow() {
+      var branch = answers.type === 'agency' ? ['service'] : ['revenue', 'bottleneck'];
+      return ['name', 'business', 'type'].concat(branch, ['interest', 'email']);
+    }
+
+    function focusStep() {
+      var input = steps[current].querySelector('input.field:not(.hidden), textarea');
+      if (input && document.activeElement && form.contains(document.activeElement)) input.focus();
+    }
+
+    function render() {
+      Object.keys(steps).forEach(function (k) { steps[k].classList.toggle('active', k === current); });
+      var f = flow();
+      var i = f.indexOf(current);
+      progress.style.width = Math.round((i / f.length) * 100) + '%';
+      stepCount.textContent = 'Step ' + (i + 1) + ' of ' + f.length;
+      backBtn.style.visibility = trail.length ? 'visible' : 'hidden';
+      nextBtn.textContent = current === 'email' ? 'Send my access link' : 'Next';
+      errEl.textContent = '';
+    }
+
+    function go(next) {
+      trail.push(current);
+      current = next;
+      render();
+      focusStep();
+    }
+
+    function val(id) { return document.getElementById(id).value.trim(); }
+
+    function otherValue(key) {
+      var btn = steps[key].querySelector('[data-other]');
+      return btn.classList.contains('selected') ? val('f-' + key + '-other') : null;
+    }
+
+    function validate() {
+      switch (current) {
+        case 'name':
+          answers.name = val('f-name');
+          return answers.name ? '' : 'Please enter your first name.';
+        case 'business':
+          answers.business = val('f-business');
+          return answers.business ? '' : 'Please enter your business name.';
+        case 'type':
+        case 'revenue':
+          return answers[current] ? '' : 'Please pick one option.';
+        case 'bottleneck':
+        case 'service':
+          var other = otherValue(current);
+          if (other !== null) {
+            answers[current] = other;
+            return other ? '' : 'Please tell us in a few words.';
+          }
+          return answers[current] ? '' : 'Please pick one option.';
+        case 'interest':
+          answers.interest = val('f-interest');
+          return '';
+        case 'email':
+          answers.email = val('f-email');
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(answers.email)) return 'Please enter a valid email.';
+          if (!document.getElementById('f-consent').checked) return 'Please tick the box to receive your access link.';
+          return '';
+      }
+      return '';
+    }
+
+    function advance() {
+      var err = validate();
+      if (err) { errEl.textContent = err; return; }
+      if (current === 'email') { submit(); return; }
+      var f = flow();
+      go(f[f.indexOf(current) + 1]);
+    }
+
+    async function submit() {
+      var payload = {
+        name: answers.name,
+        business: answers.business,
+        type: answers.type,
+        revenue: answers.type === 'brand' ? answers.revenue : '',
+        bottleneck: answers.type === 'brand' ? answers.bottleneck : '',
+        service: answers.type === 'agency' ? answers.service : '',
+        interest: answers.interest,
+        email: answers.email,
+        consent: true,
+        website: document.getElementById('f-website').value
+      };
+      nextBtn.disabled = true;
+      nextBtn.textContent = 'Sending…';
+      try {
+        var r = await fetch(SIGNUP_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        var j = await r.json().catch(function () { return {}; });
+        if (r.status === 200 && j.ok === true) {
+          document.getElementById('wizard').classList.add('hidden');
+          document.getElementById('success').classList.remove('hidden');
+          if (window.posthog && window.posthog.capture) window.posthog.capture('bot_signup_submitted', { type: payload.type });
+          return;
+        }
+        throw new Error();
+      } catch (_) {
+        errEl.textContent = 'Something went wrong. Please check your email address and try again.';
+        nextBtn.disabled = false;
+        nextBtn.textContent = 'Send my access link';
+      }
+    }
+
+    // Option buttons: select and auto-advance (except "Other", which reveals a text field)
+    form.querySelectorAll('.opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.dataset.key;
+        steps[key].querySelectorAll('.opt').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        var otherInput = document.getElementById('f-' + key + '-other');
+        if (btn.hasAttribute('data-other')) {
+          answers[key] = '';
+          otherInput.classList.remove('hidden');
+          otherInput.focus();
+          return;
+        }
+        if (otherInput) otherInput.classList.add('hidden');
+        answers[key] = btn.dataset.value;
+        advance();
+      });
+    });
+
+    form.addEventListener('submit', function (e) { e.preventDefault(); advance(); });
+    form.addEventListener('input', function () { errEl.textContent = ''; });
+
+    // Enter advances (Shift+Enter keeps a newline in the textarea)
+    form.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' || e.shiftKey) return;
+      if (e.target.tagName === 'BUTTON' || e.target.type === 'checkbox') return;
+      e.preventDefault();
+      advance();
+    });
+
+    backBtn.addEventListener('click', function () {
+      if (!trail.length) return;
+      current = trail.pop();
+      render();
+    });
+
+    // Example chips: prefill the "help with" answer and jump to the form
+    document.querySelectorAll('#examples button').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var interest = document.getElementById('f-interest');
+        if (!interest.value.trim()) interest.value = chip.textContent.trim();
+        document.getElementById('signup').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelector('[data-start]').addEventListener('click', function () {
+      setTimeout(function () { document.getElementById('f-name').focus({ preventScroll: true }); }, 400);
+    });
+
+    render();
+  })();
+  </script>
+</body>
+</html>
