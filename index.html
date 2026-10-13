@@ -22,7 +22,8 @@
   <link rel="icon" href="/images/favicon.png" type="image/png">
 
   <!-- PostHog -->
-  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);posthog.init('phc_kMrTAFRdN4yGF4y9gftGfP48Y4ALhppD3tS6Xz2KP8qi',{api_host:'https://eu.i.posthog.com',defaults:'2026-01-30'});</script>
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);</script>
+  <script defer src="/js/consent.js"></script>
   <script defer src="/js/analytics.js"></script>
 
   <!-- Tailwind CDN -->
@@ -41,12 +42,10 @@
   </script>
 
   <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="/css/vendor/aos-2.3.1.css">
   <!-- Custom styles -->
   <link rel="stylesheet" href="/css/custom.css">
   <!-- Fragment Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap" rel="stylesheet">
 </head>
 <body class="bg-black text-white antialiased min-h-screen flex flex-col">
 
@@ -157,15 +156,35 @@
               </div>
             </div>
             <!-- YouTube embed -->
-            <div class="rounded-2xl overflow-hidden aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/pM2i3qycVdk"
-                title="Seba Agency — Founder message"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-full">
-              </iframe>
+            <!-- Click-to-load: nothing is requested from YouTube until the visitor clicks -->
+            <div id="yt-founder" class="rounded-2xl overflow-hidden aspect-video bg-neutral-950 border border-neutral-800" data-video-id="pM2i3qycVdk" data-video-title="Seba Agency — Founder message">
+              <div class="yt-placeholder w-full h-full flex flex-col items-center justify-center gap-4 px-6 text-center">
+                <button type="button" class="yt-load flex flex-col items-center gap-4 group">
+                  <span class="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center group-hover:scale-105 transition-transform" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                  <span class="font-semibold text-white">Play founder message</span>
+                </button>
+                <p class="text-xs text-neutral-500 max-w-sm">Clicking play loads the video from YouTube (Google), which receives your IP address. See our <a href="/legal/privacy-policy.html#youtube" class="underline underline-offset-2 hover:text-white">privacy policy</a>.</p>
+              </div>
             </div>
+            <script>
+              (function () {
+                var box = document.getElementById('yt-founder');
+                if (!box) return;
+                box.querySelector('.yt-load').addEventListener('click', function () {
+                  var f = document.createElement('iframe');
+                  f.src = 'https://www.youtube-nocookie.com/embed/' + box.getAttribute('data-video-id') + '?autoplay=1&rel=0';
+                  f.title = box.getAttribute('data-video-title');
+                  f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                  f.allowFullscreen = true;
+                  f.className = 'w-full h-full';
+                  f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                  box.innerHTML = '';
+                  box.appendChild(f);
+                });
+              })();
+            </script>
           </div>
         </div>
       </div>
@@ -402,13 +421,14 @@
           <ul class="space-y-2 text-sm text-neutral-400">
             <li><a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
             <li><a href="/legal/impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+            <li><button type="button" data-consent-settings class="hover:text-white transition-colors">Cookie settings</button></li>
           </ul>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="/js/vendor/aos-2.3.1.js"></script>
   <script src="/js/main.js"></script>
 </body>
 </html>

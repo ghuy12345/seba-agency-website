@@ -120,22 +120,11 @@
   }
 
   function setupYouTubeTracking() {
-    var iframe = document.querySelector('iframe[src*="youtube.com/embed"]');
-    if (!iframe) return;
-    var src = iframe.src;
-    if (src.indexOf('enablejsapi') === -1) {
-      iframe.src = src + (src.indexOf('?') !== -1 ? '&' : '?') + 'enablejsapi=1';
-    }
-    var played = false;
-    window.addEventListener('message', function (e) {
-      if (played) return;
-      try {
-        var data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        if (data && data.event === 'onStateChange' && data.info === 1) {
-          played = true;
-          window.posthog.capture('video_played', { video_id: 'pM2i3qycVdk', platform: 'youtube' });
-        }
-      } catch (err) {}
+    // The video is click-to-load (see index.html), so a click on play is the play event.
+    var button = document.querySelector('#yt-founder .yt-load');
+    if (!button) return;
+    button.addEventListener('click', function () {
+      window.posthog.capture('video_played', { video_id: 'pM2i3qycVdk', platform: 'youtube' });
     });
   }
 
