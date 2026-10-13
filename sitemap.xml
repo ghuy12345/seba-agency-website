@@ -9,4 +9,10 @@
   <url><loc>https://sebaagency.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://sebaagency.com/legal/privacy-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://sebaagency.com/legal/impressum.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies/information-security-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies/access-control-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies/data-classification-and-handling-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies/incident-response-and-breach-notification-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://sebaagency.com/policies/internal-data-protection-policy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

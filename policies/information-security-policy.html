@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Security Policy — Seba Agency</title>
+  <meta name="description" content="Information Security Policy of Seba Agency UG (haftungsbeschränkt). Minimum security rules for people, devices, accounts, our n8n server, suppliers and backups.">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);</script>
+  <script defer src="/js/consent.js"></script>
+  <script defer src="/js/analytics.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','ui-sans-serif','system-ui','sans-serif'],mono:['"Fragment Mono"','ui-monospace','monospace']}}}};</script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="bg-black text-white antialiased min-h-screen flex flex-col">
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Seba Agency home"><span class="logo-mark h-8 w-8" aria-hidden="true"></span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm text-neutral-300 hover:text-white transition-colors">Home</a>
+        <a href="/#our-services" class="text-sm text-neutral-300 hover:text-white transition-colors">Services</a>
+        <a href="/case-studies.html" class="text-sm text-neutral-300 hover:text-white transition-colors">Case Studies</a>
+        <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true" class="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-neutral-100 transition-colors">Contact us</a>
+      </div>
+      <button id="menu-btn" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Toggle menu">
+        <span class="w-6 h-0.5 bg-white block"></span>
+        <span class="w-6 h-0.5 bg-white block"></span>
+        <span class="w-6 h-0.5 bg-white block"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden flex-col px-6 py-4 gap-4 border-t" style="background-color:var(--nav-bg);border-color:var(--nav-border);">
+      <a href="/" class="text-sm text-neutral-300 hover:text-white py-2 block">Home</a>
+      <a href="/#our-services" class="text-sm text-neutral-300 hover:text-white py-2 block">Services</a>
+      <a href="/case-studies.html" class="text-sm text-neutral-300 hover:text-white py-2 block">Case Studies</a>
+      <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true" class="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full block text-center mt-2">Contact us</a>
+    </div>
+  </nav>
+
+  <main class="flex-1 pt-16 py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <a href="/policies.html" class="inline-flex items-center gap-2 text-neutral-500 text-sm hover:text-white transition-colors mb-8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Policies
+      </a>
+      <h1 class="text-4xl font-bold mb-3">Information Security Policy</h1>
+      <p class="text-neutral-500 text-sm mb-4">Seba Agency UG (haftungsbeschränkt) · Version 1.0 · Effective Oct 13, 2026 · Owner: Joshua Omosebi, Managing Director · Review: annually</p>
+      <p class="mb-12"><a href="/policies/pdf/information-security-policy.pdf" class="inline-flex items-center gap-2 text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-600 hover:text-white transition-colors" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download PDF</a></p>
+      <div class="space-y-10 text-neutral-300 leading-relaxed">
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">1. Purpose and scope</h2>
+          <p>This policy sets the minimum security rules for Seba Agency UG (haftungsbeschränkt) (“Seba Agency”, “we”). It applies to everyone who works for or with us and has access to our systems or data (founders, employees, freelancers), to every device used for company work, and to every system we operate, in particular our self-hosted n8n automation server and the integrations running on it, including the TikTok Shop creator and affiliate integration.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">2. Roles and responsibilities</h2>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li>Managing Director (Joshua Omosebi): owns this policy, approves access, and acts as security and incident lead.</li><li>Everyone with access: follows this policy, completes the security baseline in section 4 before receiving access, and reports suspected incidents immediately under the Incident Response and Breach Notification Policy.</li><li>Everyone with access acknowledges this policy in writing (section 11).</li></ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">3. Systems in scope</h2>
+          <div class="mt-4 overflow-x-auto border border-neutral-800 rounded-xl"><table class="w-full text-sm min-w-[480px]"><thead><tr><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">System</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Purpose</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Hosting location</th></tr></thead><tbody><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">n8n (self-hosted via Coolify)</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Automation workflows, including the TikTok Shop integration</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Hetzner Online GmbH</td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Notion</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Database for creator, order and commission records</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Notion Labs, Inc., USA</td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Tally</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Forms</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Tally BV</td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">TikTok Shop / TikTok APIs</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Source of creator, order and commission data</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">TikTok</td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">GitHub, Cloudflare</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Website code and DNS</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">USA / global</td></tr></tbody></table></div>
+          <p class="mt-4">The complete list of systems and who can access them is kept in the access register of the Access Control Policy.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">4. Security baseline for devices and accounts</h2>
+          <p>Every device used for company work must have:</p>
+          <ol class="list-decimal pl-6 space-y-2 mt-3 text-neutral-400"><li>Automatic operating system and browser updates switched on.</li><li>Built-in malware protection active (Microsoft Defender on Windows; XProtect and Gatekeeper on macOS).</li><li>Full-disk encryption switched on (FileVault on macOS, BitLocker on Windows).</li><li>Automatic screen lock after at most 5 minutes of inactivity, unlocked by password, PIN or biometrics.</li><li>No shared user accounts on the device.</li></ol>
+          <p class="mt-4">Every account used for company work must have:</p>
+          <ol class="list-decimal pl-6 space-y-2 mt-3 text-neutral-400"><li>A unique password of at least 12 characters, stored in a password manager.</li><li>Two-factor authentication (2FA) wherever the service supports it. 2FA is mandatory for email, n8n, Hetzner and Coolify, Notion, Tally, TikTok, GitHub and Cloudflare.</li><li>Passwords are never sent by chat or email. Where a shared login cannot be avoided, it is shared through the password manager and recorded in the access register.</li></ol>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">5. Server and network security</h2>
+          <p>The n8n server is configured and kept as follows:</p>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li><strong class="text-white">Firewall:</strong> only ports 80 and 443 (HTTPS) and SSH are publicly reachable; all other ports are closed (Hetzner Cloud Firewall and/or ufw).</li><li><strong class="text-white">SSH:</strong> key-based login only; password login and direct root login are disabled.</li><li><strong class="text-white">Transport encryption:</strong> all web interfaces and webhooks use HTTPS with TLS 1.2 or higher. Plain HTTP redirects to HTTPS.</li><li><strong class="text-white">n8n access:</strong> the n8n editor requires a named personal login with 2FA. Webhooks that receive data are authenticated (secret header, token or signature check) wherever the sending platform supports it.</li><li><strong class="text-white">Secrets:</strong> API keys and tokens are stored only in n8n’s encrypted credential store or in the Coolify environment settings, never in workflow code, Notion or documents. The n8n encryption key is backed up securely and separately from the server.</li><li><strong class="text-white">Segregation:</strong> the server runs only Seba Agency services. Each service runs in its own container, and databases are not exposed to the internet.</li><li><strong class="text-white">Monitoring:</strong> an uptime monitor alerts on outages; failed n8n executions trigger an alert; server login attempts are logged. Logs are reviewed after every alert and at least monthly.</li></ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">6. Data protection</h2>
+          <p>Data is classified and handled according to the <a href="/policies/data-classification-and-handling-policy.html" class="text-white underline underline-offset-2">Data Classification and Handling Policy</a>. The TikTok Shop integration processes only creator usernames and IDs, order IDs, SKU quantities and commission amounts. It must not collect buyer names, addresses, phone numbers or email addresses.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">7. Suppliers</h2>
+          <p>We use only suppliers that provide adequate security and, where they process personal data for us, have signed a data processing agreement (Art. 28 GDPR). Current processors are listed in the <a href="/policies/internal-data-protection-policy.html" class="text-white underline underline-offset-2">Internal Data Protection Policy</a>.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">8. Backups</h2>
+          <p>The n8n database and configuration must be backed up at least daily, stored encrypted and kept for 30 days. A restore is tested at least once a year.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">9. Related policies</h2>
+          <p>Access Control Policy · Data Classification and Handling Policy · Incident Response and Breach Notification Policy · Vulnerability and Patch Management Policy · Internal Data Protection Policy.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">10. Exceptions and violations</h2>
+          <p>Exceptions need written approval from the Managing Director, with a reason and an end date. Violations can lead to removal of access and, for contractors, termination of the engagement.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">11. Review and acknowledgement</h2>
+          <p>This policy is reviewed at least once a year and after any significant incident or system change.</p>
+          <div class="mt-4 overflow-x-auto border border-neutral-800 rounded-xl"><table class="w-full text-sm min-w-[480px]"><thead><tr><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Name</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Role</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Signature</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Date</th></tr></thead><tbody><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Joshua Omosebi</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Managing Director</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">JoshuaOmosebi</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">October 13, 2026</td></tr></tbody></table></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-neutral-900 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div>
+        <a href="/" aria-label="Seba Agency home"><span class="logo-mark h-8 w-8 mb-4" aria-hidden="true"></span></a>
+        <p class="text-neutral-500 text-sm">© 2026. Your growth partner</p>
+      </div>
+      <div class="flex gap-14">
+        <div>
+          <h5 class="text-sm font-semibold mb-4">Company</h5>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li><a href="/case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="/#abou-us-hero" class="hover:text-white transition-colors">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold mb-4">Legal</h5>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li><a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/legal/impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+            <li><a href="/policies.html" class="hover:text-white transition-colors">Policies</a></li>
+            <li><button type="button" data-consent-settings class="hover:text-white transition-colors">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

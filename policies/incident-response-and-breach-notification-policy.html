@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Response and Breach Notification Policy — Seba Agency</title>
+  <meta name="description" content="Incident Response and Breach Notification Policy of Seba Agency UG (haftungsbeschränkt). How we detect, handle and report security incidents and personal data breaches, including notification deadlines.">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
+  <script>!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);</script>
+  <script defer src="/js/consent.js"></script>
+  <script defer src="/js/analytics.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','ui-sans-serif','system-ui','sans-serif'],mono:['"Fragment Mono"','ui-monospace','monospace']}}}};</script>
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="bg-black text-white antialiased min-h-screen flex flex-col">
+
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" aria-label="Seba Agency home"><span class="logo-mark h-8 w-8" aria-hidden="true"></span></a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm text-neutral-300 hover:text-white transition-colors">Home</a>
+        <a href="/#our-services" class="text-sm text-neutral-300 hover:text-white transition-colors">Services</a>
+        <a href="/case-studies.html" class="text-sm text-neutral-300 hover:text-white transition-colors">Case Studies</a>
+        <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true" class="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full hover:bg-neutral-100 transition-colors">Contact us</a>
+      </div>
+      <button id="menu-btn" class="md:hidden p-2 flex flex-col gap-1.5" aria-label="Toggle menu">
+        <span class="w-6 h-0.5 bg-white block"></span>
+        <span class="w-6 h-0.5 bg-white block"></span>
+        <span class="w-6 h-0.5 bg-white block"></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden flex-col px-6 py-4 gap-4 border-t" style="background-color:var(--nav-bg);border-color:var(--nav-border);">
+      <a href="/" class="text-sm text-neutral-300 hover:text-white py-2 block">Home</a>
+      <a href="/#our-services" class="text-sm text-neutral-300 hover:text-white py-2 block">Services</a>
+      <a href="/case-studies.html" class="text-sm text-neutral-300 hover:text-white py-2 block">Case Studies</a>
+      <a href="https://calendly.com/joshua-sebaagency/30min" target="_blank" rel="noopener noreferrer" data-cta="true" class="bg-white text-black text-sm font-semibold px-5 py-2 rounded-full block text-center mt-2">Contact us</a>
+    </div>
+  </nav>
+
+  <main class="flex-1 pt-16 py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <a href="/policies.html" class="inline-flex items-center gap-2 text-neutral-500 text-sm hover:text-white transition-colors mb-8">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Policies
+      </a>
+      <h1 class="text-4xl font-bold mb-3">Incident Response and Breach Notification Policy</h1>
+      <p class="text-neutral-500 text-sm mb-4">Seba Agency UG (haftungsbeschränkt) · Version 1.0 · Effective Oct 13, 2026 · Owner: Joshua Omosebi, Managing Director · Review: annually</p>
+      <p class="mb-12"><a href="/policies/pdf/incident-response-and-breach-notification-policy.pdf" class="inline-flex items-center gap-2 text-sm text-neutral-300 border border-neutral-800 rounded-full px-4 py-2 hover:border-neutral-600 hover:text-white transition-colors" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Download PDF</a></p>
+      <div class="space-y-10 text-neutral-300 leading-relaxed">
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">1. Purpose and scope</h2>
+          <p>This policy describes how Seba Agency detects, handles and reports security incidents and personal data breaches, including incidents affecting the TikTok Shop integration and data we receive from TikTok or from the seller we work for.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">2. Definitions</h2>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li><strong class="text-white">Security incident:</strong> any event that threatens the confidentiality, integrity or availability of our systems or data, for example a lost laptop, a phishing compromise, a leaked API token, unauthorised access to n8n or Notion, malware, or a server compromise.</li><li><strong class="text-white">Personal data breach:</strong> a security incident leading to the accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to, personal data (Art. 4(12) GDPR).</li></ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">3. Roles</h2>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li><strong class="text-white">Incident lead:</strong> Joshua Omosebi, Managing Director, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a>.</li><li><strong class="text-white">Deputy:</strong> Joshua Omosebi, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a>.</li><li><strong class="text-white">Everyone:</strong> reports any suspected incident to the incident lead immediately by phone or message, and does not investigate alone or delete evidence.</li></ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">4. Response steps</h2>
+          <ol class="list-decimal pl-6 space-y-2 mt-3 text-neutral-400"><li><strong class="text-white">Report and log:</strong> record the time, what was observed and who reported it in the incident log (section 8).</li><li><strong class="text-white">Contain:</strong> for example revoke and rotate affected tokens and passwords, disable affected accounts, pause affected n8n workflows, block IP addresses, isolate the server.</li><li><strong class="text-white">Assess:</strong> what happened, which systems and data were affected, whether personal data is involved, how many people, and the likely risk to them.</li><li><strong class="text-white">Notify:</strong> see section 5.</li><li><strong class="text-white">Recover:</strong> restore from clean backups, fix the cause, re-enable services.</li><li><strong class="text-white">Review:</strong> within two weeks, record the root cause and preventive actions, and update policies where needed.</li></ol>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">5. Notification</h2>
+          <h3 class="font-semibold text-white mt-6 mb-2">Data we process for a client (e.g. the TikTok Shop seller) and data received from TikTok</h3>
+          <p>We notify the affected seller and TikTok without undue delay, and no later than 48 hours after becoming aware of a personal data breach, or within any shorter period required by contract or by TikTok’s terms, so the controller can meet its own 72-hour deadline. As far as known at the time, the notice includes: the nature of the breach; categories and approximate number of people and records affected; likely consequences; measures taken or proposed; and a contact person (Art. 33(3) GDPR). Further information follows as soon as it is available.</p>
+          <h3 class="font-semibold text-white mt-6 mb-2">Data for which Seba Agency is the controller</h3>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li>We notify the competent supervisory authority, the Bayerisches Landesamt für Datenschutzaufsicht (BayLDA), within 72 hours, unless the breach is unlikely to result in a risk to individuals (Art. 33 GDPR).</li><li>We inform affected individuals without undue delay if the breach is likely to result in a high risk to them (Art. 34 GDPR).</li></ul>
+          <p class="mt-4">Every breach is documented in the incident log, including breaches that did not need to be reported (Art. 33(5) GDPR).</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">6. Quick playbooks</h2>
+          <ul class="list-disc pl-6 space-y-2 mt-3 text-neutral-400"><li><strong class="text-white">Leaked or exposed token or password:</strong> revoke it immediately, issue a new one, check logs for misuse since exposure, and notify under section 5 if data was accessed.</li><li><strong class="text-white">Lost or stolen device:</strong> lock or wipe it remotely if possible, sign out all sessions, rotate passwords of accounts used on it. With full-disk encryption this is usually not a breach, but it is logged.</li><li><strong class="text-white">Suspected server compromise:</strong> take a snapshot for analysis, restrict the firewall to the admin’s IP address, rotate every credential stored on the server, and rebuild from a clean image if the compromise is confirmed.</li><li><strong class="text-white">Phishing:</strong> reset the password, revoke sessions, check 2FA settings and email forwarding rules.</li></ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">7. Contacts</h2>
+          <div class="mt-4 overflow-x-auto border border-neutral-800 rounded-xl"><table class="w-full text-sm min-w-[480px]"><thead><tr><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Who</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Contact</th></tr></thead><tbody><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Incident lead</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Joshua Omosebi, <a href="mailto:joshua@sebaagency.com" class="text-white underline underline-offset-2">joshua@sebaagency.com</a>, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a></td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Deputy</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Joshua Omosebi, <a href="mailto:joshua@sebaagency.com" class="text-white underline underline-offset-2">joshua@sebaagency.com</a>, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a></td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Seller (client)</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Joshua Omosebi, <a href="mailto:joshua@sebaagency.com" class="text-white underline underline-offset-2">joshua@sebaagency.com</a>, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a></td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">TikTok</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Joshua Omosebi, <a href="mailto:joshua@sebaagency.com" class="text-white underline underline-offset-2">joshua@sebaagency.com</a>, <a href="tel:+4917670574768" class="text-white underline underline-offset-2">+49 176 70574768</a></td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Supervisory authority</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">BayLDA, breach report form at <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer" class="text-white underline underline-offset-2">lda.bayern.de</a></td></tr><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Hosting</td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400">Hetzner Online GmbH support</td></tr></tbody></table></div>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">8. Incident log</h2>
+          <div class="mt-4 overflow-x-auto border border-neutral-800 rounded-xl"><table class="w-full text-sm min-w-[480px]"><thead><tr><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Date</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Description</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Personal data involved?</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Actions taken</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Notified (who, when)</th><th class="text-left font-semibold text-white px-3 py-2 border-b border-neutral-800 align-top">Closed</th></tr></thead><tbody><tr><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td><td class="px-3 py-2 border-b border-neutral-900 align-top text-neutral-400"></td></tr></tbody></table></div>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-white mb-3">9. Testing and review</h2>
+          <p>This policy is reviewed annually. Once a year we walk through one scenario from section 6 to check that contacts, access and steps still work.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-neutral-900 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
+      <div>
+        <a href="/" aria-label="Seba Agency home"><span class="logo-mark h-8 w-8 mb-4" aria-hidden="true"></span></a>
+        <p class="text-neutral-500 text-sm">© 2026. Your growth partner</p>
+      </div>
+      <div class="flex gap-14">
+        <div>
+          <h5 class="text-sm font-semibold mb-4">Company</h5>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li><a href="/case-studies.html" class="hover:text-white transition-colors">Case Studies</a></li>
+            <li><a href="/#abou-us-hero" class="hover:text-white transition-colors">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-sm font-semibold mb-4">Legal</h5>
+          <ul class="space-y-2 text-sm text-neutral-400">
+            <li><a href="/legal/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/legal/impressum.html" class="hover:text-white transition-colors">Impressum</a></li>
+            <li><a href="/policies.html" class="hover:text-white transition-colors">Policies</a></li>
+            <li><button type="button" data-consent-settings class="hover:text-white transition-colors">Cookie settings</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
