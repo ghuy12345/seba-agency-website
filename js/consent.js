@@ -1,13 +1,15 @@
 /*
  * Cookie consent (§ 25 TDDDG / GDPR).
- * PostHog is only initialised after the visitor clicks "Accept".
+ * PostHog and Google Tag Manager are only loaded after the visitor clicks "Accept".
  * The choice is stored in localStorage; any element with
  * [data-consent-settings] reopens the banner so consent can be withdrawn.
  */
 (function () {
-  var STORAGE_KEY = 'seba-consent-v1';
+  // v2: Google Tag Manager added, so earlier choices (PostHog only) are asked again.
+  var STORAGE_KEY = 'seba-consent-v2';
   var POSTHOG_KEY = 'phc_kMrTAFRdN4yGF4y9gftGfP48Y4ALhppD3tS6Xz2KP8qi';
   var POSTHOG_OPTIONS = { api_host: 'https://eu.i.posthog.com', defaults: '2026-01-30' };
+  var GTM_ID = 'GTM-NN8VDQTL';
   var banner = null;
 
   function getChoice() {
@@ -24,6 +26,22 @@
     ph.init(POSTHOG_KEY, POSTHOG_OPTIONS);
   }
 
+  // Google Tag Manager
+  function startTagManager() {
+    if (window.google_tag_manager) return;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',GTM_ID);
+  }
+  // End Google Tag Manager
+
+  function startTracking() {
+    startAnalytics();
+    startTagManager();
+  }
+
   function clearAnalytics() {
     try {
       if (window.posthog && window.posthog.__loaded) window.posthog.opt_out_capturing();
@@ -34,7 +52,8 @@
     if (parts.length > 1) domains.push('.' + parts.slice(-2).join('.'));
     document.cookie.split(';').forEach(function (c) {
       var name = c.split('=')[0].trim();
-      if (name.indexOf('ph_') !== 0) return;
+      if (name.indexOf('ph_') !== 0 && name.indexOf('_ga') !== 0 && name.indexOf('_gcl_') !== 0 &&
+          name !== '_gid' && name !== '_fbp' && name !== '_fbc') return;
       domains.forEach(function (d) {
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
       });
@@ -78,10 +97,10 @@
     setChoice(value);
     closeBanner();
     if (value === 'granted') {
-      startAnalytics();
+      startTracking();
     } else {
       clearAnalytics();
-      // PostHog cannot be fully unloaded once running; reload to stop it.
+      // PostHog and Google Tag Manager cannot be unloaded once running; reload to stop them.
       if (previous === 'granted') location.reload();
     }
   }
@@ -95,9 +114,10 @@
     banner.setAttribute('aria-live', 'polite');
     banner.setAttribute('aria-label', 'Cookie settings');
     banner.innerHTML =
-      '<div class="consent-title">Analytics cookies</div>' +
-      '<p>With your consent, we use PostHog analytics (hosted in the EU) to see how visitors use this site. ' +
-      'PostHog stores a cookie on your device. You can change your choice at any time via "Cookie settings" in the footer. ' +
+      '<div class="consent-title">Analytics and advertising cookies</div>' +
+      '<p>With your consent, we use PostHog analytics (hosted in the EU) to see how visitors use this site, and Google Tag Manager ' +
+      '(Google Ireland) to load tags that measure and improve our ads. These store cookies on your device. ' +
+      'You can change your choice at any time via "Cookie settings" in the footer. ' +
       '<a href="/legal/privacy-policy.html#analytics">Privacy policy</a></p>' +
       '<div class="consent-actions">' +
       '<button type="button" data-consent="denied">Reject</button>' +
@@ -119,7 +139,7 @@
 
   function init() {
     var choice = getChoice();
-    if (choice === 'granted') startAnalytics();
+    if (choice === 'granted') startTracking();
     else if (choice !== 'denied') showBanner();
   }
 
