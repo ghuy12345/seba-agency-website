@@ -1,15 +1,15 @@
 /*
  * Cookie consent (§ 25 TDDDG / GDPR).
- * PostHog and the Meta Pixel are only loaded after the visitor clicks "Accept".
+ * PostHog and Google Tag Manager are only loaded after the visitor clicks "Accept".
  * The choice is stored in localStorage; any element with
  * [data-consent-settings] reopens the banner so consent can be withdrawn.
  */
 (function () {
-  // v2: Meta Pixel added, so earlier choices (PostHog only) are asked again.
+  // v2: Google Tag Manager added, so earlier choices (PostHog only) are asked again.
   var STORAGE_KEY = 'seba-consent-v2';
   var POSTHOG_KEY = 'phc_kMrTAFRdN4yGF4y9gftGfP48Y4ALhppD3tS6Xz2KP8qi';
   var POSTHOG_OPTIONS = { api_host: 'https://eu.i.posthog.com', defaults: '2026-01-30' };
-  var META_PIXEL_ID = '4428283004052309';
+  var GTM_ID = 'GTM-NN8VDQTL';
   var banner = null;
 
   function getChoice() {
@@ -26,25 +26,20 @@
     ph.init(POSTHOG_KEY, POSTHOG_OPTIONS);
   }
 
-  // Meta Pixel Code
-  function startMetaPixel() {
-    if (window.fbq) return;
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', META_PIXEL_ID);
-    fbq('track', 'PageView');
+  // Google Tag Manager
+  function startTagManager() {
+    if (window.google_tag_manager) return;
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',GTM_ID);
   }
-  // End Meta Pixel Code
+  // End Google Tag Manager
 
   function startTracking() {
     startAnalytics();
-    startMetaPixel();
+    startTagManager();
   }
 
   function clearAnalytics() {
@@ -57,7 +52,8 @@
     if (parts.length > 1) domains.push('.' + parts.slice(-2).join('.'));
     document.cookie.split(';').forEach(function (c) {
       var name = c.split('=')[0].trim();
-      if (name.indexOf('ph_') !== 0 && name !== '_fbp' && name !== '_fbc') return;
+      if (name.indexOf('ph_') !== 0 && name.indexOf('_ga') !== 0 && name.indexOf('_gcl_') !== 0 &&
+          name !== '_gid' && name !== '_fbp' && name !== '_fbc') return;
       domains.forEach(function (d) {
         document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + (d ? '; domain=' + d : '');
       });
@@ -104,7 +100,7 @@
       startTracking();
     } else {
       clearAnalytics();
-      // PostHog and the Meta Pixel cannot be unloaded once running; reload to stop them.
+      // PostHog and Google Tag Manager cannot be unloaded once running; reload to stop them.
       if (previous === 'granted') location.reload();
     }
   }
@@ -119,8 +115,8 @@
     banner.setAttribute('aria-label', 'Cookie settings');
     banner.innerHTML =
       '<div class="consent-title">Analytics and advertising cookies</div>' +
-      '<p>With your consent, we use PostHog analytics (hosted in the EU) to see how visitors use this site, and the Meta Pixel ' +
-      '(Meta Platforms Ireland) to measure and improve our ads on Facebook and Instagram. Both store cookies on your device. ' +
+      '<p>With your consent, we use PostHog analytics (hosted in the EU) to see how visitors use this site, and Google Tag Manager ' +
+      '(Google Ireland) to load tags that measure and improve our ads. These store cookies on your device. ' +
       'You can change your choice at any time via "Cookie settings" in the footer. ' +
       '<a href="/legal/privacy-policy.html#analytics">Privacy policy</a></p>' +
       '<div class="consent-actions">' +
