@@ -19,6 +19,7 @@
     while (original.scrollWidth < window.innerWidth * 1.1 && guard++ < 4) {
       items.forEach(function (li) {
         var copy = li.cloneNode(true);
+        copy.className = 'is-clone';
         copy.setAttribute('aria-hidden', 'true');
         copy.querySelector('img').alt = '';
         original.appendChild(copy);

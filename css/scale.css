@@ -108,10 +108,10 @@ img { display: block; }
 .marquee-track { display: flex; width: max-content; animation: marquee 36s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-set { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
-.marquee-set li { flex: none; padding: 0 32px; }
-.marquee-set img { height: 40px; width: auto; opacity: .7; }
-/* Single-line wordmarks read larger than emblems at the same height, so they sit a step lower. */
-.marquee-set img.is-wordmark { height: 30px; }
+.marquee-set li { flex: none; display: flex; align-items: center; min-height: 50px; padding: 0 32px; }
+/* Each logo carries its own --h, tuned by eye so they read at the same optical size:
+   wide wordmarks sit lower, thin or airy emblems sit taller. */
+.marquee-set img { height: var(--h, 40px); width: auto; opacity: .7; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,7 +119,7 @@ img { display: block; }
   .marquee-track { animation: none; width: auto; justify-content: center; }
   .marquee-set { flex-wrap: wrap; justify-content: center; row-gap: 20px; padding: 0 12px; }
   .marquee-set li { padding: 0 20px; }
-  .marquee-set[aria-hidden="true"] { display: none; }
+  .marquee-set[aria-hidden="true"], .marquee-set .is-clone { display: none; }
 }
 
 /* Sections */
@@ -207,7 +207,6 @@ img { display: block; }
 .faq details { background: var(--surface); border-radius: 12px; padding: 20px 24px; }
 .faq summary { cursor: pointer; font-weight: 600; font-size: 19px; }
 .faq details p { margin-top: 12px; color: var(--muted); }
-.placeholder { color: var(--accent); font-weight: 600; }
 
 /* Footer */
 .site-footer { border-top: 1px solid var(--border-1); }
@@ -255,9 +254,8 @@ img { display: block; }
   .proof-wide { padding: 28px; }
   .pilot { padding: 24px; }
   .pilot .btn-outline { width: 100%; justify-content: center; }
-  .marquee-set li { padding: 0 22px; }
-  .marquee-set img { height: 32px; }
-  .marquee-set img.is-wordmark { height: 24px; }
+  .marquee-set li { min-height: 40px; padding: 0 22px; }
+  .marquee-set img { height: calc(var(--h, 40px) * .8); }
   .apply-card { padding: 24px 16px; border-radius: 16px; }
 
   /* Mobile: full-width bar pinned to the bottom, clear of the home indicator. */
