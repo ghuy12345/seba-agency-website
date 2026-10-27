@@ -64,7 +64,6 @@ img { display: block; }
 .site-header { border-bottom: 1px solid var(--border-1); }
 .header-row { padding-top: 18px; padding-bottom: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .logo-link { display: inline-flex; color: var(--text); }
-.logo-link:hover { color: var(--text); }
 /* The site's S mark (same as the main site's .logo-mark), drawn as a mask so it takes the text colour. */
 .logo-mark {
   display: block; width: 36px; height: 36px; background-color: currentColor;
