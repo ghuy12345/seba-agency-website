@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Seba Agency: Pay-on-profit Meta ads</title>
-  <meta name="description" content="We run your Meta, TikTok and Google ads, coach you on creative and your whole store every week, and get paid on your net profit.">
+  <meta name="description" content="We run your Meta, TikTok and Google ads, coach you on all things ecom every week, and get paid on your net profit.">
   <link rel="canonical" href="https://sebaagency.com/scale/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sebaagency.com/scale/">
   <meta property="og:site_name" content="Seba Agency">
-  <meta property="og:title" content="More profit in 90 days, or we pay your fee back.">
-  <meta property="og:description" content="We run your Meta, TikTok and Google ads, coach you on creative and your whole store every week, and get paid on your net profit.">
+  <meta property="og:title" content="More revenue in 90 days, or you don't pay.">
+  <meta property="og:description" content="We run your Meta, TikTok and Google ads, coach you on all things ecom every week, and get paid on your net profit.">
   <meta property="og:image" content="https://sebaagency.com/images/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -50,12 +50,12 @@
 <!-- Hero -->
 <section class="hero wrap" id="hero">
   <p class="hero-kicker" id="hero-kicker">ECOM BRANDS DOING $30K+/MONTH:</p>
-  <h1 class="hero-title" id="hero-title">More profit in 90 days, or we pay your fee back. <span class="accent">No delays.</span></h1>
+  <h1 class="hero-title" id="hero-title">More revenue in 90 days, <span class="accent">or you don't pay.</span></h1>
   <script>
     // Headline variant per Meta ad: ?h=guarantee|rise|clicks|strain (default guarantee).
     (function () {
       var variants = {
-        rise: ['ECOM BRANDS DOING $30K+/MONTH:', "If your profit doesn't rise, ", 'your fee goes bye.'],
+        rise: ['ECOM BRANDS DOING $30K+/MONTH:', "If your revenue doesn't rise, ", 'your fee goes bye.'],
         clicks: ['STUCK AT $30–50K/MONTH?', 'Stop paying for clicks. ', 'Start paying for profit.'],
         strain: ['ECOM BRANDS DOING $30K+/MONTH:', 'No retainer strain. ', 'We only win when you gain.']
       };
@@ -71,7 +71,7 @@
       title.appendChild(span);
     })();
   </script>
-  <p class="hero-sub">We run your Meta, TikTok and Google ads, coach you on creative and your whole store every week, and get paid on your net profit. Not on clicks, not on ROAS screenshots.</p>
+  <p class="hero-sub">We run your Meta, TikTok and Google ads, coach you on all things ecom every week, and get paid on your net profit.</p>
 
   <div class="what-we-do">
     <div class="wwd-box"><p class="eyebrow accent">Media buying</p><p class="wwd-text">Meta, TikTok and Google, done for you</p></div>
@@ -113,6 +113,28 @@
       <!-- Duplicate set for the seamless loop; hidden from assistive tech and from the reduced-motion layout. -->
       <ul class="marquee-set" role="list" aria-hidden="true"></ul>
     </div>
+  </div>
+</section>
+
+<!-- Application: live Tally form WJJMva (redirects to Calendly after submit) -->
+<section class="section-apply wrap" id="apply">
+  <div class="apply-card">
+    <h2 class="h2 h2-apply">See if you qualify</h2>
+    <iframe id="tally-apply" data-tally-src="https://tally.so/embed/WJJMva?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="See if you qualify"></iframe>
+    <script>
+      // Forward the page's UTM params to the embed so Tally's hidden fields capture them.
+      (function () {
+        var frame = document.getElementById('tally-apply');
+        var url = new URL(frame.getAttribute('data-tally-src'));
+        var page = new URLSearchParams(location.search);
+        ['utm_source', 'utm_campaign', 'utm_content'].forEach(function (key) {
+          var value = page.get(key);
+          if (value) url.searchParams.set(key, value);
+        });
+        frame.setAttribute('data-tally-src', url.toString());
+      })();
+    </script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
   </div>
 </section>
 
@@ -185,13 +207,28 @@
   </div>
 </section>
 
+<!-- Dashboard proof (anonymous client) -->
+<section class="section-dash wrap">
+  <h2 class="h2 h2-tight h2-dash">Real dashboards. Not promises.</h2>
+  <p class="muted lead lead-dash">Straight from a client account we run. Revenue blurred, everything else as it is.</p>
+  <div class="dash-row">
+    <figure class="dash-card dash-card-dark">
+      <img src="/images/scale/shopify-dashboard.webp" alt="Shopify dashboard: total sales up 591 percent, 9,301 orders up 375 percent, with a rising sales chart" width="1124" height="740" loading="lazy">
+      <figcaption><strong>Shopify:</strong> total sales +591%, 9,301 orders (+375%)</figcaption>
+    </figure>
+    <figure class="dash-card">
+      <div class="dash-shot-light"><img src="/images/scale/meta-ads-manager.webp" alt="Meta Ads Manager: 232,708 euros total spent and 6,801 total results, with one campaign at 87,839 euros" width="466" height="180" loading="lazy"></div>
+      <figcaption><strong>Meta Ads Manager:</strong> €232K+ spent, €87K in a single campaign</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- Offer -->
 <section class="section wrap">
   <h2 class="h2 h2-tight">How we work with you</h2>
   <p class="muted lead">Every plan is paid on profit, with a 3-month term. We go from done-with-you to fully done-for-you, depending on your stage. We'll walk you through the numbers on the call.</p>
   <div class="grid grid-280">
     <div class="plan">
-      <p class="eyebrow muted">Done with you</p>
       <h3 class="plan-name">Launch</h3>
       <ul class="list">
         <li>Meta, TikTok or Google media buying, done for you</li>
@@ -200,7 +237,6 @@
       </ul>
     </div>
     <div class="plan">
-      <p class="eyebrow muted">Most popular</p>
       <h3 class="plan-name">Scale</h3>
       <ul class="list">
         <li>Everything in Launch</li>
@@ -208,17 +244,8 @@
         <li>Meta and TikTok media buying</li>
       </ul>
     </div>
-    <div class="plan plan-featured">
-      <p class="eyebrow accent">Done for you</p>
-      <h3 class="plan-name">All-In</h3>
-      <ul class="list">
-        <li>Everything in Scale</li>
-        <li>Statics and video editing, produced for you</li>
-        <li>Meta, TikTok and Google Ads</li>
-      </ul>
-    </div>
   </div>
-  <p class="muted small mt-16">Add-ons on any plan: a second ad platform, Google Ads.</p>
+  <p class="muted small mt-16">Add-ons on any plan: a second ad platform, Google Ads, statics and video editing.</p>
   <div class="pilot">
     <div class="pilot-text">
       <p class="eyebrow accent">Pilot · $100k+/month brands only</p>
@@ -229,30 +256,12 @@
   </div>
 </section>
 
-<!-- Guarantee + promises -->
+<!-- Guarantee -->
 <section class="section wrap" id="guarantee">
   <div class="guarantee">
-    <p class="eyebrow eyebrow-wide accent">The 90-day profit guarantee</p>
-    <h2 class="h2 h2-guarantee">More profit in 90 days, or we pay your fee back.</h2>
-    <p class="guarantee-text">If your net profit isn't higher after 90 days than in the 30 days before we started, we refund your month-3 fee. Net profit is calculated the same way as in your contract. No arguing, no delays.</p>
-  </div>
-  <div class="split mt-16">
-    <div class="card-surface card-pad-lg">
-      <h3 class="h3 h3-xs">What we can't promise</h3>
-      <ul class="list list-tight muted">
-        <li>Overnight results</li>
-        <li>That every single week will be profitable</li>
-        <li>That we can fix a product nobody wants</li>
-      </ul>
-    </div>
-    <div class="card-surface card-pad-lg">
-      <h3 class="h3 h3-xs">What we can promise</h3>
-      <ul class="list list-tight">
-        <li>Straight answers, good or bad</li>
-        <li>We spend your money like it's our own</li>
-        <li>We only earn more when you do</li>
-      </ul>
-    </div>
+    <p class="eyebrow eyebrow-wide accent">The 90-day growth guarantee</p>
+    <h2 class="h2 h2-guarantee">More revenue in 90 days, or you don't pay.</h2>
+    <p class="guarantee-text">If your revenue in month 3 isn't higher than in the 30 days before we started, we refund every fee you paid us for those 90 days.</p>
   </div>
 </section>
 
@@ -263,8 +272,6 @@
       <h2 class="h2-fit">This is for you if</h2>
       <ul class="list list-tight">
         <li>You're doing $30k+/month</li>
-        <li>Your product already sells</li>
-        <li>You'll share real numbers: margins, COGS, ad spend</li>
         <li>You're done paying people who don't care about your profit</li>
       </ul>
     </div>
@@ -279,36 +286,14 @@
   </div>
 </section>
 
-<!-- Application: live Tally form WJJMva (redirects to Calendly after submit) -->
-<section class="section-apply wrap" id="apply">
-  <div class="apply-card">
-    <h2 class="h2 h2-apply">See if you qualify</h2>
-    <iframe id="tally-apply" data-tally-src="https://tally.so/embed/WJJMva?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" loading="lazy" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="See if you qualify"></iframe>
-    <script>
-      // Forward the page's UTM params to the embed so Tally's hidden fields capture them.
-      (function () {
-        var frame = document.getElementById('tally-apply');
-        var url = new URL(frame.getAttribute('data-tally-src'));
-        var page = new URLSearchParams(location.search);
-        ['utm_source', 'utm_campaign', 'utm_content'].forEach(function (key) {
-          var value = page.get(key);
-          if (value) url.searchParams.set(key, value);
-        });
-        frame.setAttribute('data-tally-src', url.toString());
-      })();
-    </script>
-    <script async src="https://tally.so/widgets/embed.js"></script>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="section-faq wrap">
   <h2 class="h2 h2-faq">Questions</h2>
   <div class="faq">
-    <details><summary class="faq-question">How do you calculate net profit?</summary><p>Revenue minus COGS, shipping, fees, ad spend and other agreed costs. We agree the exact formula in writing before we start, and it's the same one we use for the guarantee.</p></details>
+    <details><summary class="faq-question">How do you calculate net profit?</summary><p>Revenue minus COGS, shipping, fees, ad spend and other agreed costs. We agree the exact formula in writing before we start, and that's what our fee is based on.</p></details>
     <details><summary class="faq-question">How much does it cost?</summary><p>It depends on your stage and which channels you need. Every plan is paid on profit, so our fee grows only when yours does. You'll get exact numbers on the call.</p></details>
-    <details><summary class="faq-question">Do you make the ads too?</summary><p>On All-In, yes: we produce the statics and video edits for you. On Launch and Scale, we tell your team or creators exactly what to make every week, and on Scale you get 12 ready-to-shoot creative briefs a month.</p></details>
-    <details><summary class="faq-question">Why a 3-month term?</summary><p>Month one is research and testing, months two and three are scaling what works. 90 days is also how long the profit guarantee runs.</p></details>
+    <details><summary class="faq-question">Do you make the ads too?</summary><p>We tell your team or creators exactly what to make every week, and on Scale you get 12 ready-to-shoot creative briefs a month. If you want us to produce the statics and video edits too, that's an add-on.</p></details>
+    <details><summary class="faq-question">Why a 3-month term?</summary><p>Month one is research and testing, months two and three are scaling what works. 90 days is also how long the growth guarantee runs.</p></details>
     <details><summary class="faq-question">Do I keep my ad account and creatives?</summary><p>Always. We work inside your ad account, and everything we make is yours, even if you leave.</p></details>
     <details><summary class="faq-question">What happens on the call?</summary><p>30 minutes. We look at your account and numbers together, tell you what we'd do first, and whether we're a fit. No hard sell.</p></details>
   </div>
