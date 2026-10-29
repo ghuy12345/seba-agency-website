@@ -3,7 +3,8 @@
  * - logo marquee: fills the duplicate set so the loop is seamless
  * - "Apply for the pilot": reloads the Tally embed with interest=creator-army-pilot
  * - sticky "Book a call" button (after the hero, hidden while #apply is on screen)
- * - Meta Pixel Lead on Tally.FormSubmitted
+ * - Tally.FormSubmitted → dataLayer / PostHog. The Meta Pixel Lead is NOT fired here:
+ *   Tally's native pixel integration sends it, so firing it in code would double-count.
  */
 (function () {
   var TALLY_FORM_ID = 'WJJMva';
@@ -91,17 +92,7 @@
     }, { threshold: 0.05 }).observe(apply);
   }
 
-  // Meta Pixel: Lead when the embedded Tally form is submitted.
-  function trackLead(attempt) {
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Lead');
-      return;
-    }
-    // The pixel base code may still be loading (it comes in via Tag Manager); retry briefly.
-    if ((attempt || 0) < 20) setTimeout(function () { trackLead((attempt || 0) + 1); }, 250);
-  }
-
-  function setupLeadTracking() {
+  function setupSubmitTracking() {
     var seen = {};
     window.addEventListener('message', function (e) {
       if (typeof e.origin !== 'string' || !/^https:\/\/([a-z0-9-]+\.)*tally\.so$/.test(e.origin)) return;
@@ -116,7 +107,6 @@
       var key = payload.id || payload.respondentId || 'submission';
       if (seen[key]) return;
       seen[key] = true;
-      trackLead(0);
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'tally_form_submitted', form_id: TALLY_FORM_ID });
       if (window.posthog && window.posthog.__loaded) {
@@ -128,5 +118,5 @@
   setupMarquee();
   setupApplyLinks();
   setupStickyCta();
-  setupLeadTracking();
+  setupSubmitTracking();
 })();
