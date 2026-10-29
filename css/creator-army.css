@@ -58,20 +58,17 @@ body.ca-page { padding-bottom: 0; }
 .ca-catch-text { max-width: 780px; }
 .ca-btn-md { min-height: 56px; margin-top: 28px; padding: 0 36px; font-size: 18px; }
 
-/* Promise + what you cover */
-.ca-pair { display: flex; flex-wrap: wrap; gap: 16px; }
-.ca-pair > * { flex: 1 1 min(380px, 100%); border-radius: 16px; padding: 36px; }
-.ca-promise { background: var(--accent); color: #141414; }
-.ca-cover { background: var(--surface); }
-.ca-pair-label { margin-bottom: 10px; letter-spacing: .12em; }
+/* Promise */
+.ca-promise { background: var(--accent); color: #141414; border-radius: 16px; padding: 36px; }
+.ca-promise > * { max-width: 780px; }
+.ca-promise-label { margin-bottom: 10px; letter-spacing: .12em; }
 .ca-promise-big {
   margin-bottom: 14px; font-family: var(--display); font-size: clamp(30px, 3.6vw, 42px);
-  line-height: 1.05; text-transform: uppercase;
+  line-height: 1.05; text-transform: uppercase; max-width: none;
 }
 .ca-promise-main { margin-bottom: 12px; font-size: 19px; font-weight: 700; }
 .ca-promise-cond { margin-bottom: 12px; font-size: 16px; font-weight: 500; }
 .ca-promise-keep { font-size: 18px; font-weight: 500; }
-.ca-cover-fee { margin-top: 16px; }
 
 /* How we get paid */
 .ca-paid { padding-top: 40px; padding-bottom: 56px; }
@@ -107,7 +104,7 @@ body.ca-page { padding-bottom: 0; }
   .ca-sub { font-size: 18px; }
   .ca-stat { padding: 28px 24px; }
   .ca-stat-num { font-size: clamp(44px, 14vw, 56px); }
-  .ca-pair > * { padding: 28px; }
+  .ca-promise { padding: 28px; }
   .ca-btn-md { width: 100%; padding: 0 24px; }
 }
 
