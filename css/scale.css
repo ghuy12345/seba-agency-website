@@ -137,7 +137,6 @@ img { display: block; }
 .h2-tight { margin-bottom: 12px; }
 .h3 { margin-bottom: 8px; font-size: 22px; line-height: 1.3; }
 .h3-sm { margin-bottom: 6px; }
-.h3-xs { margin-bottom: 14px; font-size: 20px; }
 .lead { margin-bottom: 32px; max-width: 760px; }
 
 .grid { display: grid; gap: 16px; }
@@ -149,7 +148,6 @@ img { display: block; }
 .card-quote { font-size: 20px; font-weight: 500; }
 .card-outline { border: 1px solid var(--border-2); border-radius: 14px; padding: 28px; }
 .card-surface { background: var(--surface); border-radius: 16px; padding: 28px; }
-.card-pad-lg { padding: 32px; }
 .num { margin-bottom: 8px; font-family: var(--display); font-size: 26px; }
 .problem-close { margin-top: 40px; max-width: 780px; font-size: 22px; }
 
@@ -174,10 +172,24 @@ img { display: block; }
 .quote-card blockquote { font-size: 22px; font-weight: 500; }
 .quote-card figcaption { margin-top: 16px; color: var(--muted); font-size: 15px; }
 
+/* Dashboard proof */
+.section-dash { padding-top: 40px; padding-bottom: 56px; }
+.h2-dash { font-size: clamp(30px, 4vw, 48px); }
+.lead-dash { margin-bottom: 28px; }
+.dash-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch; }
+.dash-card {
+  margin: 0; flex: 2 1 min(320px, 100%); background: var(--surface); border: 1px solid var(--border-2);
+  border-radius: 16px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px;
+}
+.dash-card-dark { flex: 3 1 min(480px, 100%); background: #000; justify-content: flex-start; }
+.dash-card img { width: 100%; height: auto; }
+.dash-card-dark img { border-radius: 10px; }
+.dash-shot-light { background: #fff; border-radius: 10px; padding: 12px; }
+.dash-card figcaption { color: var(--muted); font-size: 15px; }
+.dash-card figcaption strong { color: var(--text); }
+
 /* Offer */
 .plan { background: var(--surface); border-radius: 16px; padding: 36px; }
-.plan .eyebrow { margin-bottom: 6px; font-weight: 600; }
-.plan-featured { border: 2px solid var(--accent); }
 .plan-name { margin-bottom: 20px; font-family: var(--display); font-weight: 400; font-size: 34px; text-transform: uppercase; }
 .list { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 10px; }
 .list-tight { gap: 8px; }
