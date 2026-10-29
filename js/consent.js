@@ -15,6 +15,10 @@
   var GTM_IGNORE_CONSENT = true;
   var banner = null;
   var gtmStarted = false;
+  // TEMPORARY: pages whose <html> has data-hide-consent-banner (/scale, /creator-army) don't open
+  // the banner on load, for a screen-recording test. "Cookie settings" still opens it.
+  // Remove the attribute from those pages to bring the banner back.
+  var hideBannerOnLoad = document.documentElement.hasAttribute('data-hide-consent-banner');
 
   function getChoice() {
     try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
@@ -146,7 +150,7 @@
     var choice = getChoice();
     if (GTM_IGNORE_CONSENT) startTagManager();
     if (choice === 'granted') startTracking();
-    else if (choice !== 'denied') showBanner();
+    else if (choice !== 'denied' && !hideBannerOnLoad) showBanner();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
